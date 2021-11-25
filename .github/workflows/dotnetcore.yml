@@ -22,7 +22,7 @@ jobs:
     - name: Node $
       uses: actions/setup-node@v1
       with:
-        node-version: $
+        node-version: 17.1
     - name: npm install and npm run build
       run: |
           cd PekarenV2
