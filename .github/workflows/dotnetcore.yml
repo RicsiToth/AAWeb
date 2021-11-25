@@ -19,6 +19,15 @@ jobs:
         dotnet-version: 3.1
     - name: Build with dotnet
       run: dotnet build NET --configuration Release
+    - name: Node $
+      uses: actions/setup-node@v1
+      with:
+        node-version: $
+    - name: npm install and npm run build
+      run: |
+          cd PekarenV2
+          npm ci
+          npm run build:ci
     - name: dotnet publish
       run: |
         dotnet publish NET -c Release -o dotnetcorewebapp 
